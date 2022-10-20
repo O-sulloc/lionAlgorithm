@@ -4,6 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.EmptyStackException;
+import java.util.Stack;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StackStudyTest {
@@ -36,5 +39,31 @@ class StackStudyTest {
         assertEquals(20, ss.pop());
         assertEquals(10, ss.pop());
 
+        assertThrows(EmptyStackException.class, ()->{
+           ss.pop(); //익셉션 테스트?하는? 람다식?이라는데?? 모던 자바 표현에 가깝다는데
+        });
+    }
+
+    @Test
+    @DisplayName("isempty test")
+    void isEmpty(){
+        StackStudy ss = new StackStudy();
+        assertTrue(ss.isEmpty());
+
+        ss.push(10);
+        assertFalse(ss.isEmpty());
+        ss.pop();
+        assertTrue(ss.isEmpty());
+
+    }
+
+    @Test
+    void realStack(){
+        Stack<Integer> st = new Stack<>(); //실제 util에 있는 stack
+        //st.pop(); //java.util.EmptyStackException 발생. 당연함. 아무 것도 없는데 뭘 pop해
+
+        assertThrows(EmptyStackException.class, () -> {
+           st.pop();
+        });
     }
 }
