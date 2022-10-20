@@ -26,8 +26,8 @@ public class StackStudy {
     }
 
     public int pop() {
-        if(this.isEmpty()){
-            throw  new EmptyStackException(); //스택 안에 아무 것도 없ㅇ면 예외처리
+        if (this.isEmpty()) {
+            throw new EmptyStackException(); //스택 안에 아무 것도 없ㅇ면 예외처리
         }
         int value = this.arr[this.pointer - 1];
         this.pointer--;
@@ -37,5 +37,13 @@ public class StackStudy {
     public boolean isEmpty() {
         boolean isEmpty = this.pointer == 0;
         return isEmpty;
+    }
+
+    public int peek() {
+        if (isEmpty()) throw new EmptyStackException() {
+        };
+
+        return this.arr[this.pointer - 1];
+
     }
 }
