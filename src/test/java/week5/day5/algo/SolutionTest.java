@@ -9,11 +9,11 @@ class SolutionTest {
     @Test
     void bracket(){
         Solution sol = new Solution();
-        assertTrue(sol.solveBracket("()()"));
+        //assertTrue(sol.solveBracket("()()"));
         //assertTrue(sol.solveBracket("(())()"));
         //assertFalse(sol.solveBracket(")()("));
         //assertFalse(sol.solveBracket("(()("));
-        //assertFalse(sol.solveBracket("((((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))))"));
+        assertFalse(sol.solveBracket("((((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))))"));
 
     }
 
