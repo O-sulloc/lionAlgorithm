@@ -40,7 +40,7 @@ class StackStudyTest {
         assertEquals(10, ss.pop());
 
         assertThrows(EmptyStackException.class, ()->{
-           ss.pop(); //익셉션 테스트?하는? 람다식?이라는데?? 모던 자바 표현에 가깝다는데
+           ss.pop(); //익셉션 테스트하는 람다식(모던 자바 스타일)
         });
     }
 

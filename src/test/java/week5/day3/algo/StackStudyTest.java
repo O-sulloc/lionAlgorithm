@@ -1,14 +1,20 @@
 package week5.day3.algo;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class StackStudyTest {
+    @BeforeEach
+    void setUp() {
+        System.out.println("before");
+    }
 
-    //@Test
+    @Test
+    @DisplayName("push test")
     void pushTest() {
         StackStudy ss = new StackStudy();
         ss.push(10);
@@ -16,11 +22,11 @@ class StackStudyTest {
 
         int[] arr = ss.getArr();
 
-        Assertions.assertEquals(10, arr[0]);
         Assertions.assertEquals(20, arr[1]);
+        Assertions.assertEquals(10, arr[0]);
     }
 
-    @Test
+    //@Test
     @DisplayName("push pop 둘 다 동시에 테스트")
     void pushAndPop(){
         StackStudy ss = new StackStudy();
