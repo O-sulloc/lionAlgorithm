@@ -1,6 +1,5 @@
 package week6.day4;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Study {
@@ -11,35 +10,36 @@ public class Study {
 
     //hash를 사용해서
 
-    public String solution(String[] participant, String[] completion) {
-        String name = "";
+    public void solution(String[] participant, String[] completion) {
+        String name = ""; //완주못한 사람 이름
 
         HashMap<String, Integer> table = new HashMap<>();
 
-        //테이블에 참가자 이름을 넣고
+        //테이블에 참가자 이름을 넣고 +1 (동명이인 문제)
         for (int i = 0; i < participant.length; i++) {
-            table.put(participant[i],1);
-        }
+            String key=participant[i];
 
-        //완주자 이름 찾아서 지우고
+            if(!table.containsKey(key)){
+                table.put(key, 0);
+            }
+            table.put(key, table.get(key)+1);
+        }
+        //System.out.println(table.get(completion[0])); //완주자 이름 넣으면 1이 나옴.
+
+        //완주자 이름 찾아서 -1 해서 0으로 만들고
         for (int i = 0; i < completion.length ; i++) {
-            table.remove(completion[i]);
+            String key=completion[i];
+            table.put(key, table.get(key)-1);
         }
 
-        // 0인 사람 출력
-        for (int i = 0; i < participant.length ; i++) {
-            name = table.keySet().toString();
-            //??
-        }
+        // Value가 0이 아닌 key 출력
+        //??
 
-        System.out.println(name);
-
-        return name;
     }
-
     public static void main(String[] args) {
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"kiki", "eden"};
-
+        Study study = new Study();
+        study.solution(participant,completion);
     }
 }
