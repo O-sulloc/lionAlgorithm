@@ -12,26 +12,34 @@ public class Study {
     //hash를 사용해서
 
     public String solution(String[] participant, String[] completion) {
-        String name ="";
+        String name = "";
 
         HashMap<String, Integer> table = new HashMap<>();
 
-        //테이블에 참가자 이름을 넣고 1로 표시
+        //테이블에 참가자 이름을 넣고
         for (int i = 0; i < participant.length; i++) {
             table.put(participant[i],1);
         }
 
-        //완주자 이름 찾아서 0으로 표시
+        //완주자 이름 찾아서 지우고
         for (int i = 0; i < completion.length ; i++) {
-
+            table.remove(completion[i]);
         }
 
         // 0인 사람 출력
+        for (int i = 0; i < participant.length ; i++) {
+            name = table.keySet().toString();
+            //??
+        }
+
+        System.out.println(name);
 
         return name;
     }
 
     public static void main(String[] args) {
         String[] participant = {"leo", "kiki", "eden"};
+        String[] completion = {"kiki", "eden"};
+
     }
 }
