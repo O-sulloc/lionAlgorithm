@@ -1,14 +1,14 @@
 package week7.day2;
 
 public class PrimeStudy {
-    boolean someOperation(int a, int b) {
-        return a < b; //i랑 소수판별하려는 숫자랑 대소비교
+    interface StatementStrategy{
+        boolean compare(int a, int b);
     }
 
-    public boolean isPrime(int num) {
+    public boolean isPrime(int num, StatementStrategy stmt) {
         //소수 판별해보기
 
-        for (int i = 2; someOperation(i, num); i++) {
+        for (int i = 2; stmt.compare(i, num); i++) {
             if (num % i == 0) {
                 //나머지 없으면 소수 아님
                 return false; //prime
