@@ -18,9 +18,9 @@ public class PrimeStudy {
         return true;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         PrimeStudy ps = new PrimeStudy();
         boolean result = ps.isPrime(17);
         System.out.println(result);
-    }
+    }*/
 }
