@@ -21,10 +21,13 @@ public class PrimeEra {
 
         int multipleOf = 2;
 
-        for (int i = 2; i < 100; i += 2) {
+        for (int i = 2; i < nums.length; i += 2) {
             //2씩 증가
             checks[i] = false; //2를 제외한 짝수를 지운다(false를 넣는다.)
-            System.out.println();
+        }
+
+        for (int i = 0; i < checks.length; i++) {
+            System.out.println(checks[i]);
         }
 
     }
