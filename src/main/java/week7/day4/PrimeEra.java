@@ -11,19 +11,20 @@ public class PrimeEra {
 
     public static void main(String[] args) {
         int n = 50; //n=50
-        int[] nums = new int[n-1]; //nums=49 (2~50)
+        int[] nums = new int[n - 1]; //nums=49 (2~50)
         boolean[] checks = new boolean[nums.length]; //nums수만큼 배열 생성
-        Arrays.fill(checks,true); //배열을 True로 초기화, 왜냐하면 기본값이 false이기 때문
+        Arrays.fill(checks, true); //배열을 True로 초기화, 왜냐하면 기본값이 false이기 때문
 
-        for (int i = 0; i <nums.length ; i++) {
-
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = i + 2;
         }
 
-        boolean[] check = new boolean[100];
+        int multipleOf = 2;
 
-        for (int i = 0; i < 100; i+=2) {
+        for (int i = 2; i < 100; i += 2) {
             //2씩 증가
-            check[i]=false;
+            checks[i] = false; //2를 제외한 짝수를 지운다(false를 넣는다.)
+            System.out.println();
         }
 
     }
