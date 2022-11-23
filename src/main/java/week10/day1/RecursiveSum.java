@@ -1,5 +1,7 @@
 package week10.day1;
 
+import java.util.Scanner;
+
 public class RecursiveSum {
     public int sum(int n) {
         if (n == 0) {
@@ -10,7 +12,10 @@ public class RecursiveSum {
     }
 
     public static void main(String[] args) {
-        int n = 10;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        //int n = 10;
         RecursiveSum r = new RecursiveSum();
         System.out.println(r.sum(n));
     }
