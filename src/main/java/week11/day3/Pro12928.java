@@ -9,6 +9,10 @@ public class Pro12928 {
     public static int solution(int n) {
         List nums = new ArrayList<>();
         int sum = 0;
+
+        if (n == 0) {
+            return sum;
+        }
         for (int i = 1; i < 3000; i++) {
             if (n % i == 0) {
                 nums.add(i); //i가 약수
