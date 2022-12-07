@@ -17,11 +17,14 @@ public class Scoville {
             pq.add(sco[i]);
         }
 
-        while (pq.peek() < k) {
+        while (pq.size() >= 2 && pq.peek() < k) {
+            // while(pq.peek() < k) 는 pq가 1개일 경우를 대비하지 못해서 runtimeError가 난다.
             int mix = pq.poll() + (pq.poll() * 2);
             pq.add(mix);
             answer++;
         }
+
+        if(pq.peek() < k) return -1;
 
         return answer;
     }
