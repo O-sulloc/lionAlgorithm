@@ -16,7 +16,9 @@ public class MCPStudy {
                 } else if (i == 0 && j > 0) {
                     //첫행만 있을 경우 (0,0), (0,1), (0,2)
                     dp[i][j] = dp[i][j - 1] + matrix[i][j];
-
+                }else if (i > 0 && j == 0) {
+                    //(1,0) 넣기
+                    dp[i][j] = dp[i-1][j] + matrix[i][j]; // 1 + 4
                 }
             }
         }
