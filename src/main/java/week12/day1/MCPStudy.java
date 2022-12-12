@@ -11,7 +11,7 @@ public class MCPStudy {
             System.out.println(Arrays.toString(dp[i]));
         }
 
-        // 2.
+        //
     }
 
     public static void main(String[] args) {
